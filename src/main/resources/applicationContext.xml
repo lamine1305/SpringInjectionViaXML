@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- 						IMPLEMENTATION 1					-->						
+ 	<bean id="repositoryInterface" class="repository.RepositoryLamine" />
+<context:annotation-config/>
+	<bean id="serviceInterface" class="service.ServiceLamine">
+<!-- 		<property name="repositoryInterface" ref="repositoryLamine"></property>
+ -->		<property name="numService" value="10"></property>
+	</bean>
+	
+	<bean id="controlerLamine" class="controler.InvoiceControlerLamine">
+<!-- 		<property name="serviceInterface" ref="serviceLamine"></property>
+ -->	</bean>
+	
+<!-- 						IMPLEMENTATION 2					-->						
+  	<!-- <bean id="repositoryMichel" class="repository.RepositoryMichel" />
+ 	
+	<bean id="serviceMichel" class="service.ServiceMichel">
+		<property name="repositoryInterface" ref="repositoryMichel"></property>
+	</bean>
+	
+	<bean id="controlerMichel" class="controler.InvoiceControlerMichel">
+		<property name="serviceInterface" ref ="serviceMichel"></property>
+	</bean>   -->
+
+</beans>
